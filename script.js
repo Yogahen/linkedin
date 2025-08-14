@@ -1,20 +1,23 @@
-document.getElementById('sendBtn').addEventListener('click', () => {
-  const name = document.getElementById('name').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const statusDiv = document.getElementById('status');
+const note = document.getElementById('note');
+const count = document.getElementById('count');
 
-  if (!name) {
-    statusDiv.textContent = "Masukkan nama target terlebih dahulu!";
-    statusDiv.style.color = "red";
-    return;
-  }
-
-  if (!message) {
-    statusDiv.textContent = "Tulis pesan singkat sebelum mengirim!";
-    statusDiv.style.color = "red";
-    return;
-  }
-
-  statusDiv.textContent = `Permintaan koneksi ke ${name} terkirim dengan pesan: "${message}"`;
-  statusDiv.style.color = "green";
+note.addEventListener('input', () => {
+  count.textContent = note.value.length;
 });
+
+function cancel() {
+  note.value = '';
+  count.textContent = 0;
+  alert('Invitation canceled.');
+}
+
+function send() {
+  if (note.value.trim() === '') {
+    alert('Please write a note before sending.');
+    return;
+  }
+  alert('Invitation sent with note:\n\n' + note.value);
+  note.value = '';
+  count.textContent = 0;
+}
+
