@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinkedIn Connect Simulator</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add a note</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>LinkedIn Connect Simulator</h1>
-    <label for="name">Nama Target:</label>
-    <input type="text" id="name" placeholder="Masukkan nama orang..." />
-    <label for="message">Pesan Singkat:</label>
-    <textarea id="message" placeholder="Halo, saya ingin terhubung dengan Anda..."></textarea>
-    <button id="sendBtn">Kirim Connect</button>
-    <div id="status"></div>
+<div class="popup">
+  <h2>Add a note to your invitation</h2>
+  <p class="subtitle">3 personalized invitations remaining for this month.</p>
+
+  <textarea id="note" maxlength="200" placeholder="Write your message..."></textarea>
+  <div class="char-count"><span id="count">0</span>/200</div>
+
+  <p class="premium">
+    Send unlimited, longer invites with Premium—Subscribers have 14x more connections on average.
+    <a href="#">Try Premium for $0</a>
+  </p>
+
+  <div class="buttons">
+    <button class="cancel" onclick="cancel()">Cancel</button>
+    <button class="send" onclick="send()">Send</button>
   </div>
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
